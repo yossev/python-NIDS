@@ -7,7 +7,6 @@ def packet_callback(packet):
         print(f"New Packet: {ip_layer.src} -> {ip_layer.dst}")
         if TCP in packet and packet[TCP].dport > 1024:  
             print(f"Suspicious packet detected: {ip_layer.src}:{packet[TCP].sport} -> {ip_layer.dst}:{packet[TCP].dport}:{packet[TCP].flags}")
-     
 
 
 def sniff_packets():
